@@ -38,7 +38,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'pry'
   gem 'guard-rspec'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.0'
   gem 'rspec-collection_matchers'
   # gem 'factory_girl_rails'
 end
@@ -51,6 +51,3 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'

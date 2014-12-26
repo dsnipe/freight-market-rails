@@ -309,7 +309,7 @@ DEPENDENCIES
   rails (= 4.2)
   rails-api
   rspec-collection_matchers
-  rspec-rails (~> 3.0.0)
+  rspec-rails (~> 3.0)
   spring
   spring-commands-rspec
   wisper
