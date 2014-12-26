@@ -38,9 +38,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'pry'
   gem 'guard-rspec'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.1'
   gem 'rspec-collection_matchers'
-  # gem 'factory_girl_rails'
+  gem 'airborne' # rspec api testing
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
