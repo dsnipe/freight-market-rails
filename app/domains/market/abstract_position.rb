@@ -1,4 +1,4 @@
-module	AbstractPosition
+module	Market::AbstractPosition
 	extend ActiveSupport::Concern
 
 	included do

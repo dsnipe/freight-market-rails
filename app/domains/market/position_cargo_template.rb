@@ -1,4 +1,4 @@
-class CargoPositionTemplate
+class Market::PositionCargoTemplate
 	include Mongoid::Document
 	include Mongoid::Timestamps
 

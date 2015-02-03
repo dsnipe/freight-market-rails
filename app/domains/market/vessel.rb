@@ -1,4 +1,4 @@
-class	Vessel
+class	Market::Vessel
 	include Mongoid::Document
 	include Mongoid::Timestamps
 
@@ -8,5 +8,5 @@ class	Vessel
 	field :draft, type: Integer
 	field :year_of_built, type: Integer
 
-	embedded_in :vessel_position
+	embedded_in :position_vessel
 end

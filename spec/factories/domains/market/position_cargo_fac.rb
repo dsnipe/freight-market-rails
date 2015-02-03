@@ -1,6 +1,6 @@
-FactoryGirl.define do 
+FactoryGirl.define do
 
-	factory :cargo_position do
+	factory :position_cargo, class: Market::PositionCargo do
 		# association :user, factory: :user_broker
 		open_date { 1.days.from_now  }
 		close_date { 7.days.from_now }

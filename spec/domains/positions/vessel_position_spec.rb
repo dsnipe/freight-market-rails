@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe VesselPosition do
-  let(:vessel_position) { FactoryGirl.create(:vessel_position) }
+RSpec.describe Market::PositionVessel do
+  let(:position_vessel) { FactoryGirl.create(:position_vessel) }
 
-  it { expect(vessel_position).to_not be_nil }
+  it { expect(position_vessel).to_not be_nil }
 end
