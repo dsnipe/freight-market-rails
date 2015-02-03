@@ -5,6 +5,9 @@ gem 'rails', '4.2'
 gem 'rails-api'
 
 gem 'mongoid'
+# Fix https://github.com/mongoid/mongoid/issues/3455
+gem 'bson'
+gem 'moped', github: 'mongoid/moped'
 
 # Pub/Sub service
 gem 'wisper'

@@ -6,7 +6,7 @@
 
 class Discussion::ConversationFactory
   attr_accessor :caller, :caller_position, :receiver, :receiver_position, :message
-  attr_reader :conversation_instance, :message_instance
+  attr_reader :conversation, :message_instance
 
   def initialize(args={})
     args.each do |key, val|
@@ -26,17 +26,17 @@ class Discussion::ConversationFactory
   private
 
     def init_conversation
-      @conversation_instance = Discussion::Conversation.new
+      @conversation = Discussion::Conversation.new
     end
 
     def create_message
       body = @message ? @message : 'Offer pending message'
-      @message_instance = Discussion::Message.new({body: body})
+      @message_instance = Discussion::Message.new({body: body, owner: @caller.id})
     end
 
     def store_positions
-      @conversation_instance.caller_init_state = JSON.parse(@caller_position.to_json)
-      @conversation_instance.receiver_init_state = JSON.parse(@receiver_position.to_json)
+      @conversation.caller_init_state = JSON.parse(@caller_position.to_json)
+      @conversation.receiver_init_state = JSON.parse(@receiver_position.to_json)
     end
 
     def connect_postions
@@ -47,17 +47,17 @@ class Discussion::ConversationFactory
         pos_cargo = @receiver_position
         pos_vessel = @caller_position
       end
-      conversation_instance.messages.push(@message_instance)
-      @conversation_instance.position_cargo = pos_cargo
-      @conversation_instance.position_vessel = pos_vessel
+      conversation.messages.push(@message_instance)
+      @conversation.position_cargo = pos_cargo
+      @conversation.position_vessel = pos_vessel
     end
 
     def finialize_save
-      @conversation_instance.caller = @caller
-      @conversation_instance.receiver = @receiver
-      if @conversation_instance.save({ state: :offered })
+      @conversation.caller = @caller
+      @conversation.receiver = @receiver
+      if @conversation.save({ state: :offered })
         # Send notification, etc.
-        @conversation_instance
+        @conversation
       end
     end
 

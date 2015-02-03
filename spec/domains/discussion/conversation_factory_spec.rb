@@ -46,5 +46,9 @@ RSpec.describe Discussion::ConversationFactory do
       expect(conv_fact.caller).to eq(caller)
       expect(conv_fact.receiver).to eq(receiver)
     end
+
+    it "message should have owner same as caller" do
+      expect(conv_fact.messages[0].owner).to eq(caller.id)
+    end
   end
 end
