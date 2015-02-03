@@ -25,12 +25,12 @@ gem 'pusher'
 gem 'airbrake'
 gem 'enumerize'
 
-group 'development' do 
+group 'development' do
 	gem 'letter_opener'
 	gem 'binding_of_caller', platforms: :ruby
 	gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger', platforms: :ruby
 	gem 'pry-byebug', platforms: :ruby   # This may or may not work with 2.1.2 either, so remove if you still get errorrs
-	gem 'quiet_assets'	
+	gem 'quiet_assets'
 end
 
 group :development, :test do
@@ -42,6 +42,7 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'airborne' # rspec api testing
   gem 'factory_girl_rails'
+	gem 'ffaker'
 end
 
 # To use ActiveModel has_secure_password

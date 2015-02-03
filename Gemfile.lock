@@ -107,6 +107,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    ffaker (1.31.0)
     ffi (1.9.6)
     formatador (0.2.5)
     globalid (0.3.0)
@@ -314,6 +315,7 @@ DEPENDENCIES
   delayed_job_mongoid
   enumerize
   factory_girl_rails
+  ffaker
   grape
   guard-rspec
   jazz_hands!

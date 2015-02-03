@@ -1,6 +1,8 @@
 module	Market::AbstractPosition
 	extend ActiveSupport::Concern
 
+	class InterfaceNotImplementedError < NoMethodError; end
+
 	included do
 		include Mongoid::Document
 		include Mongoid::Timestamps
@@ -11,6 +13,12 @@ module	Market::AbstractPosition
 		field :state, type: String
 
 		enumerize :state, in: [:active, :closed], default: :active, predicates: true
+
+		has_many :conversation, class_name: "Discussion::Conversation"
+	end
+
+	def position_type
+		raise InterfaceNotImplementedError.new
 	end
 
 end

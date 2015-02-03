@@ -1,0 +1,3 @@
+class Discussion::Deal
+  
+end
