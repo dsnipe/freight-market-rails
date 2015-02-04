@@ -14,7 +14,9 @@ class Market::SearchPosition::ByMatches
 
   # There is should be different algorithms for positions
   def for_position_cargo
-    @result = ::Market::PositionVessel.gte('vessel.dwcc' => @position.dwcc)
+    @result = ::Market::Vessel.gte(dwcc: @position.dwcc)
+                              .map(&:position_vessels)
+                              .flatten
   end
 
   def for_position_vessel

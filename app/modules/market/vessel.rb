@@ -8,5 +8,12 @@ class	Market::Vessel
 	field :draft, type: Integer
 	field :year_of_built, type: Integer
 
-	embedded_in :position_vessel
+	validates :title, presence: true
+	validates :dwcc, presence: true, numericality: { only_integer: true }
+	validates :hold_capacity, presence: true
+	validates :draft, presence: true
+	validates :year_of_built, presence: true
+
+	has_many :position_vessels
+
 end

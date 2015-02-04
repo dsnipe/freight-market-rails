@@ -11,6 +11,8 @@ class Market::SearchPosition::ByParams
   end
 
   def for_vessel
-    @result = ::Market::PositionVessel.where('vessel.dwcc' => @params[:dwcc])
+    @result = ::Market::Vessel.where(dwcc: @params[:dwcc])
+                              .map(&:position_vessels)
+                              .flatten
   end
 end

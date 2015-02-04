@@ -11,8 +11,12 @@ module	Market::AbstractPosition
 		field :open_date, type: Date
 		field :close_date, type: Date
 		field :state, type: String
-
 		enumerize :state, in: [:active, :closed], default: :active, predicates: true
+
+		validates :open_date, presence: true
+		validates :close_date, presence: true
+		validates :state, presence: true
+
 
 		has_many :conversation, class_name: "Discussion::Conversation"
 	end

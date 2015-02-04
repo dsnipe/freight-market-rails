@@ -1,7 +1,7 @@
 class Market::PositionVessel
 	include Market::AbstractPosition
 
-	embeds_one :vessel
+	belongs_to :vessel
 
 	def position_type
 		"position_vessel"
