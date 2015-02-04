@@ -10,9 +10,6 @@ class	Market::Vessel
 
 	validates :title, presence: true
 	validates :dwcc, presence: true, numericality: { only_integer: true }
-	validates :hold_capacity, presence: true
-	validates :draft, presence: true
-	validates :year_of_built, presence: true
 
 	has_many :position_vessels
 

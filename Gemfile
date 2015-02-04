@@ -25,7 +25,7 @@ gem 'oj' # fastest JSON parser
 gem 'pusher'
 
 # Utils
-gem 'airbrake'
+# gem 'airbrake'
 gem 'enumerize'
 
 group 'development' do

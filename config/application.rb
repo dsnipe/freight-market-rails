@@ -14,8 +14,6 @@ require "bson"
 require "moped"
 Moped::BSON = BSON
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module FreightMarketBackend
@@ -28,8 +26,9 @@ module FreightMarketBackend
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    # Some autoload magic
+    config.paths.add File.join('controllers', 'app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('controllers', 'app', 'api', '*')]
 
     config.paths.add File.join('app', 'domains'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'modules', '*')]

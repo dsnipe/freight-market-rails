@@ -11,4 +11,6 @@ class Market::PositionCargoTemplate
 	field :commission, type: Float
 	field :extra_conditions, type: String
 
+	validates :dwcc, presence: true
+
 end
