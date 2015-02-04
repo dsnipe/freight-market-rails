@@ -32,6 +32,6 @@ module FreightMarketBackend
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
 
     config.paths.add File.join('app', 'domains'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'domains', '*')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'modules', '*')]
   end
 end
