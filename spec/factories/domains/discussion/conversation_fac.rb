@@ -6,6 +6,8 @@ FactoryGirl.define do
     state 'open'
     position_cargo
     position_vessel
+    association :caller, factory: :user
+    association :receiver, factory: :user
   end
 
 end

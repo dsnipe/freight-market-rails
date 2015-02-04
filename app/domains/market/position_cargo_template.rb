@@ -3,6 +3,7 @@ class Market::PositionCargoTemplate
 	include Mongoid::Timestamps
 
 	field :quantity, type: Integer
+	field :dwcc, type: Integer
 	field :sf, type: Integer
 	field :cargo_description, type: String
 	field :loading_discharging_rate, type: String

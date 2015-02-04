@@ -8,5 +8,5 @@ class	Market::Vessel
 	field :draft, type: Integer
 	field :year_of_built, type: Integer
 
-	belongs_to :position_vessel
+	embedded_in :position_vessel
 end

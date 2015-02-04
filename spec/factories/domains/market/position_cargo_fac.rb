@@ -5,7 +5,8 @@ FactoryGirl.define do
 		open_date { 1.days.from_now  }
 		close_date { 7.days.from_now }
 		sf '50'
-		quantity '3000'
+		quantity '15'
+		dwcc '3000'
 		cargo_description 'Some description'
 		loading_discharging_rate '2000 ssinc/3000 sshex'
 		freight_idea '15'
