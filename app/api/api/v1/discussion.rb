@@ -1,7 +1,6 @@
 module API
   module V1
     class Discussion < Grape::API
-      include API::V1::Defaults
 
       resource :conversations do
         desc "Return messages for specific conversation."

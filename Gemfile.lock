@@ -118,7 +118,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
-    grape (0.10.0)
+    grape (0.10.1)
       activesupport
       builder
       hashie (>= 2.1.0)
@@ -144,7 +144,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.3.2)
+    hashie (3.4.0)
     hike (1.2.3)
     hirb (0.7.2)
     hitimes (1.2.2)
@@ -297,7 +297,7 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     unicode_utils (1.4.0)
-    virtus (1.0.3)
+    virtus (1.0.4)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
