@@ -7,5 +7,7 @@ class Customer::User
   field :email, type: String
 
   has_many :discussions, class_name: "Discussion::Conversation", as: :conversations
+  has_many :positions_vessel, class_name: "Market::PositionVessel"
+  has_many :positions_cargo, class_name: "Market::PositionCargo"
 
 end

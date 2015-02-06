@@ -12,6 +12,7 @@ FactoryGirl.define do
 		freight_idea '15'
 		commission '6'
 		extra_conditions 'Bla bla bla'
+		user
 
 		# before(:create) do |rec|
 		#   rec.from_ports = [create(:port,  title: 'from port')]

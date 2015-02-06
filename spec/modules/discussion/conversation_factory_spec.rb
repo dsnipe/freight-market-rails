@@ -2,18 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Discussion::ConversationFactory do
 
-  let(:caller) { FactoryGirl.create(:user) }
-  let(:receiver) { FactoryGirl.create(:user) }
-
   let(:pc) { FactoryGirl.create('position_cargo') }
   let(:pv) { FactoryGirl.create('position_vessel') }
 
   let(:correct_data) do
     {
-      caller: caller,
-      receiver: receiver,
-      receiver_position: pc,
-      caller_position: pv
+      caller_position_id: pv.id,
+      caller_position_type: pv.position_type,
+      receiver_position_id: pc.id
     }
   end
 
@@ -23,7 +19,7 @@ RSpec.describe Discussion::ConversationFactory do
     expect(conv_fact.save).to_not be_nil
   end
   it "shouldn't create conversation" do
-    incorrect_data = correct_data.reject { |k,v| k == :caller }
+    incorrect_data = correct_data.reject { |k,v| k == :caller_position_id }
     conv_fact = Discussion::ConversationFactory.new(incorrect_data)
     conv_fact.message = 'Ho ho ho'
     expect { conv_fact.save }.to raise_error(ArgumentError)
@@ -34,6 +30,11 @@ RSpec.describe Discussion::ConversationFactory do
       Discussion::ConversationFactory.new(correct_data.merge({message: 'Hey'})).save()
       }
 
+    before(:each) do
+      @user_caller = pv.user
+      @user_receiver = pc.user
+    end
+
     it "should store correct serialized positions" do
       expect(conv_fact.caller_init_state).to eq(JSON.parse(pv.to_json))
     end
@@ -43,12 +44,12 @@ RSpec.describe Discussion::ConversationFactory do
     end
 
     it "should have caller and receiver" do
-      expect(conv_fact.caller).to eq(caller)
-      expect(conv_fact.receiver).to eq(receiver)
+      expect(conv_fact.user_caller).to eq(@user_caller)
+      expect(conv_fact.user_receiver).to eq(@user_receiver)
     end
 
     it "message should have owner same as caller" do
-      expect(conv_fact.messages[0].owner).to eq(caller.id)
+      expect(conv_fact.messages[0].owner).to eq(@user_caller.id)
     end
   end
 end

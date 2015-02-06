@@ -18,6 +18,7 @@ module API
         else
           Rails.logger.error("\n\n#{e.class.name} - #{e.message}:\n   " +
             Rails.backtrace_cleaner.clean(e.backtrace).join("\n   "))
+          # binding.pry
           error_response(e)
         end
       end

@@ -5,6 +5,7 @@ FactoryGirl.define do
 		close_date { 7.days.from_now }
 		state { :active }
 		vessel
+		user
 		# after(:create) { |vp| FactoryGirl.create(:vessel, position_vessel: vp) }
 	end
 

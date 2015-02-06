@@ -17,8 +17,8 @@ module	Market::AbstractPosition
 		validates :close_date, presence: true
 		validates :state, presence: true
 
-
 		has_many :conversation, class_name: "Discussion::Conversation"
+		belongs_to :user, class_name: "Customer::User"
 	end
 
 	def position_type
