@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe "Market API" do
+  include_context "API Helpers"
 
   before(:each) do
     @data = {
@@ -8,19 +9,6 @@ describe "Market API" do
       close_date: '2015-03-10T00:00:00',
       dwcc: '3000'
     }
-
-    # Auth stubbing
-    Grape::Endpoint.before_each do |endpoint|
-      allow(endpoint).to receive(:authenticated).and_return(true)
-    end
-  end
-
-  after do
-    Grape::Endpoint.before_each nil
-  end
-
-  def prepare_record(record)
-    JSON.parse(record.to_json, symbolize_names: true)
   end
 
   it "should return list of cargos and vessels" do

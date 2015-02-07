@@ -1,23 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Discussion API" do
-
-  before(:each) do
-    # Auth stubbing
-    Grape::Endpoint.before_each do |endpoint|
-      allow(endpoint).to receive(:authenticated).and_return(true)
-    end
-  end
-
-  after do
-    Grape::Endpoint.before_each nil
-  end
+  include_context "API Helpers"  
 
   let(:conv) {FactoryGirl.create(:conversation)}
-
-  def prepare_record(record)
-    JSON.parse(record.to_json, symbolize_names: true)
-  end
 
   it "should send offer to opponent" do
     p1 = FactoryGirl.create(:position_vessel)

@@ -27,10 +27,13 @@ module FreightMarketBackend
     # config.i18n.default_locale = :de
 
     # Some autoload magic
-    config.paths.add File.join('app', 'apis', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'apis', 'api', '*')]
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
 
-    config.paths.add File.join('app', 'domains'), glob: File.join('**', '*.rb')
+    config.paths.add File.join('app', 'modules'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'modules', '*')]
+
+    config.paths.add File.join('app', 'workers'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'workers', '*')]
   end
 end
