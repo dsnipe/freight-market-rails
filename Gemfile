@@ -8,25 +8,28 @@ gem 'mongoid'
 # Fix https://github.com/mongoid/mongoid/issues/3455
 gem 'bson'
 gem 'moped', github: 'mongoid/moped'
+gem 'redis'
 
 # Pub/Sub service
 gem 'wisper'
 
 # Backgound jobs and async
-gem 'delayed_job'
-gem 'delayed_job_mongoid'
-gem 'clockwork'
+# gem 'delayed_job'
+# gem 'delayed_job_mongoid'
+# gem 'clockwork'
 
 # API
 gem 'grape'
 gem 'oj' # fastest JSON parser
 
 # Messaging
-gem 'pusher'
+# gem 'pusher'
+gem 'sneakers'
 
 # Utils
 # gem 'airbrake'
 gem 'enumerize'
+gem 'foreman'
 
 group 'development' do
 	gem 'letter_opener'
