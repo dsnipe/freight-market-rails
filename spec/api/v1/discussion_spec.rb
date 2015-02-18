@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Discussion API" do
-  include_context "API Helpers"  
+  include_context "API Helpers"
 
   let(:conv) {FactoryGirl.create(:conversation)}
 
